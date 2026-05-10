@@ -1,0 +1,19 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[functions]
+  node_bundle = true
+
+# Cron Job pour mettre à jour les bourses et jobs chaque nuit
+[functions."sync-data"]
+  schedule = "@daily"
+
+[env]
+  FEDAPAY_PUBLIC_KEY = "pk_live_JzLYCSq5xIEjJxu1UAuRe0Gh"
+  ADMIN_EMAIL = "contacts.globalstudy@gmail.com"
+  WHATSAPP_FR = "+33753883652"
+  USDT_ADRESS = "0x395df0b6add75e86074cd8032a1d6ff293309e20"
